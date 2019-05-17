@@ -1,0 +1,82 @@
+create database Foreverland; 
+
+USE Foreverland;
+
+SET FOREIGN_KEY_CHECKS=0;
+
+
+
+DROP TABLE IF EXISTS Cliente
+;
+DROP TABLE IF EXISTS Fichin
+;
+DROP TABLE IF EXISTS Jugada
+;
+DROP TABLE IF EXISTS Recarga
+;
+
+CREATE TABLE Cliente
+(
+	DNI INTEGER NOT NULL,
+	Nombre VARCHAR(50) NOT NULL,
+	Apellido VARCHAR(50) NOT NULL,
+	Mail VARCHAR(50) NOT NULL,
+	Tarjeta INTEGER NOT NULL,
+	PRIMARY KEY (DNI)
+) 
+;
+
+
+CREATE TABLE Fichin
+(
+	IdFichin TINYINT NOT NULL,
+	Nombre VARCHAR(50) NOT NULL,
+	Anho SMALLINT NOT NULL,
+	Precio FLOAT(0) NOT NULL,
+	PRIMARY KEY (IdFichin)
+) 
+;
+
+
+CREATE TABLE Jugada
+(
+	IdJugadas INTEGER NOT NULL,
+	FechaHora DATETIME NOT NULL,
+	DNI INTEGER NOT NULL,
+	Credito FLOAT(0) NOT NULL,
+	IdFichin TINYINT NOT NULL,
+	PRIMARY KEY (IdJugadas),
+	KEY (DNI),
+	KEY (IdFichin)
+) 
+;
+
+
+CREATE TABLE Recarga
+(
+	IdRecarga INTEGER NOT NULL,
+	FechayHora DATETIME NOT NULL,
+	DNI INTEGER NOT NULL,
+	MontoRecargado FLOAT(0) NOT NULL,
+	PRIMARY KEY (IdRecarga),
+	KEY (DNI),
+	KEY (DNI)
+) 
+;
+
+
+
+SET FOREIGN_KEY_CHECKS=1;
+
+
+ALTER TABLE Jugada ADD CONSTRAINT FK_Jugada_Cliente 
+	FOREIGN KEY (DNI) REFERENCES Cliente (DNI)
+;
+
+ALTER TABLE Jugada ADD CONSTRAINT FK_Jugada_Fichin 
+	FOREIGN KEY (IdFichin) REFERENCES Fichin (IdFichin)
+;
+
+ALTER TABLE Recarga ADD CONSTRAINT FK_Recarga_Cliente 
+	FOREIGN KEY (DNI) REFERENCES Cliente (DNI)
+;
