@@ -40,7 +40,7 @@ namespace ForeverLand
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
            
-            optionsBuilder.UseMySQL("server=localhost;database=supermercado;user=supermercado;password=supermercado");
+            optionsBuilder.UseMySQL("server=localhost;database=ForeverLand;user=root;password=root");
         }
 
     }

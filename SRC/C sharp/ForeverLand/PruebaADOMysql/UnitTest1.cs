@@ -9,7 +9,7 @@ namespace PruebaADOMysql
     {
         public static MySqlADO Ado { get; set; }
 
-
+        [ClassInitialize]
         public static void SetUpClase(TestContext context)
         {
 

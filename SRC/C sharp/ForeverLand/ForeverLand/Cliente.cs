@@ -18,7 +18,7 @@ namespace ForeverLand
         public string Nombre { get; set; }
         [Column("email")]
         public string email { get; set; }
-        [Required, Column("Tarjeta")]
+        [ForeignKey("nroTajeta")]
         public Tarjeta Tarjeta { get; set; }
 
         public Cliente()
