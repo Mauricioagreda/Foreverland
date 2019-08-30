@@ -18,14 +18,14 @@ namespace ForeverLand
         [Required, Column("precio")]
         public float Precio { get; set; }
 
-        public List<Jugada> Recaudado { get; set; }
+        public List<Jugada> Jugadas { get; set; }
         public Fichin()
         {
-            Recaudado = new List<Jugada>();
+            Jugadas = new List<Jugada>();
         }  
         public float RecaudadoEntre(DateTime f1, DateTime f2)
         {
-            return Recaudado.FindAll(h => h.entre(f1, f2)).
+            return Jugadas.FindAll(h => h.entre(f1, f2)).
                 Sum(h => h.Monto);
         }
     }

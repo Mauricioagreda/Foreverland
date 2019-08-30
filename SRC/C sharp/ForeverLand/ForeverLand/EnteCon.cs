@@ -11,7 +11,7 @@ namespace ForeverLand
     {
         [ForeignKey("dni")]
         [Required]
-        public Cliente DNI { get; set; }
+        public Cliente Cliente { get; set; }
       
         [Required, Column("fechaHora")]
         public DateTime FechaHora { get; set; }
