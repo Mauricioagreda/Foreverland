@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace ForeverLand
 {
-    class MySqlADO: DbContext
+    public class MySqlADO: DbContext
     {
         public DbSet<Fichin>Fichines
         {get; set; }
@@ -39,7 +39,7 @@ namespace ForeverLand
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //Usar los datos usuario y pass del SGBD de la terminal donde se va a usar
+           
             optionsBuilder.UseMySQL("server=localhost;database=supermercado;user=supermercado;password=supermercado");
         }
 
