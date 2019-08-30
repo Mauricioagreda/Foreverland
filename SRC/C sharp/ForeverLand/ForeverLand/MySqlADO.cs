@@ -22,5 +22,26 @@ namespace ForeverLand
             Fichines.Add(fichin);
             SaveChanges();
         }
+        public void AltaCliente(Cliente cliente)
+        {
+            Clientes.Add(cliente);
+            SaveChanges();
+        }
+        public void AltaRecargas(Recarga recarga)
+        {
+            Recargas.Add(recarga);
+            SaveChanges();
+        }
+        public void AltaJugada(Jugada jugada)
+        {
+            Jugadas.Add(jugada);
+            SaveChanges();
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //Usar los datos usuario y pass del SGBD de la terminal donde se va a usar
+            optionsBuilder.UseMySQL("server=localhost;database=supermercado;user=supermercado;password=supermercado");
+        }
+
     }
 }
