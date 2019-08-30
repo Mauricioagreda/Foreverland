@@ -22,5 +22,20 @@ namespace ForeverLand
             Fichines.Add(fichin);
             SaveChanges();
         }
+        public void AltaCliente(Cliente cliente)
+        {
+            Clientes.Add(cliente);
+            SaveChanges();
+        }
+        public void AltaRecargas(Recarga recarga)
+        {
+            Recargas.Add(recarga);
+            SaveChanges();
+        }
+        public void AltaJugada(Jugada jugada)
+        {
+            Jugadas.Add(jugada);
+            SaveChanges();
+        }
     }
 }
