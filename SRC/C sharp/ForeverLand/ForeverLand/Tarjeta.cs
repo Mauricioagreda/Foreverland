@@ -11,6 +11,7 @@ namespace ForeverLand
     public class Tarjeta
     {
         [Key, Column("nroTajeta")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int nroTarjeta { get; set; }
         [Required, Column("saldo")]
         public float Saldo { get; set; }

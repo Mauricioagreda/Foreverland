@@ -11,12 +11,14 @@ namespace ForeverLand
     public class Cliente
     {
         [Key, Column("dni")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DNI { get; set; }
-        [Required, Column("apellido")]
+        [Required, Column("apellido"), StringLength(45)]
+        
         public string Apelldio { get; set; }
-        [Required, Column("nombre")]
+        [Required, Column("nombre"), StringLength(45)]
         public string Nombre { get; set; }
-        [Column("email")]
+        [Column("email"), StringLength(45)]
         public string email { get; set; }
         [ForeignKey("nroTajeta")]
         public Tarjeta Tarjeta { get; set; }

@@ -12,6 +12,7 @@ namespace ForeverLand
    public class Jugada: EnteCon
     {
         [Key, Column("IdJugada")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
        
         [ForeignKey("IdFichin")]

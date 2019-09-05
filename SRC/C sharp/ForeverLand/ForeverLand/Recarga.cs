@@ -10,6 +10,7 @@ namespace ForeverLand
     public  class Recarga:EnteCon
   {
         [Key, Column("IdRecarga")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
        

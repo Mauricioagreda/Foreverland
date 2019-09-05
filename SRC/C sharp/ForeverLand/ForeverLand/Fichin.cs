@@ -9,11 +9,13 @@ namespace ForeverLand
     [Table("Fichin")]
     public class Fichin
     {
+
         [Key, Column("idFichin")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public byte Id { get; set; }
         [Required,Column("anio")]
         public short Anio { get; set; }
-        [Required, Column("nombre")]
+        [Required, Column("nombre"), StringLength(45)]
         public string Nombre { get; set; }
         [Required, Column("precio")]
         public float Precio { get; set; }
