@@ -30,5 +30,21 @@ namespace ForeverLand
         {
             Tarjeta.RecargasEntre(inicio, fin);
         }
+        public void Jugar(Fichin fichin)
+        {
+            if (fichin.montoSuficiente(Tarjeta.Saldo))
+            {
+                Jugada jugada = new Jugada(this, fichin);
+                fichin.AgregarJugada(jugada);
+            }
+                
+        }
+
+        public void Recargar(float monto)
+        {
+            Recarga recarga = new Recarga(this, monto);
+            Tarjeta.AgregarRecarga(recarga, monto);
+          
+        }
     }
 }

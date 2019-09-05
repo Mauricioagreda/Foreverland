@@ -23,6 +23,12 @@ namespace ForeverLand
         {
             return inicio <= FechaHora && FechaHora <= fin;
         }
+        public EnteCon(Cliente cliente,float monto)
+        {
+            FechaHora = DateTime.Now;
+            Cliente = cliente;
+            Monto = monto;
+        }
         public EnteCon()
         {
 

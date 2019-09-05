@@ -12,9 +12,15 @@ namespace ForeverLand
         [Key, Column("IdRecarga")]
         public int Id { get; set; }
 
+       
+        public  Recarga(Cliente cliente,float monto) : base(cliente,monto)
+        {
+
+        }
         public Recarga()
         {
 
         }
+        
     }
 }

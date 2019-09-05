@@ -18,9 +18,15 @@ namespace ForeverLand
         [Required]
         public Fichin Fichin { get; set; }
 
+        public Jugada(Cliente cliente, Fichin fichin): base(cliente,fichin.Precio)
+        {
+            Fichin = fichin;
+        }
         public Jugada()
         {
 
         }
-    }
+        
+        
+   }
 }

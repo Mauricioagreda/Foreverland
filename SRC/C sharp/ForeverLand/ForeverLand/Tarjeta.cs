@@ -21,15 +21,18 @@ namespace ForeverLand
             Recargas = new List<Recarga>();
         }
 
-        public void AgregarRecarga(Recarga recarga)
+        public void AgregarRecarga(Recarga recarga,float monto)
         {
+
             Recargas.Add(recarga);
+            this.Saldo += monto;
         }
 
         public float RecargasEntre(DateTime f1, DateTime f2)
         {
-            return Recargas.FindAll(h => h.entre(f1, f2)).
-                Sum(h => h.Monto);
+            return Recargas.FindAll(r => r.entre(f1, f2)).
+                Sum(r => r.Monto);
         }
+       
     }
 }
