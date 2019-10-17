@@ -18,10 +18,15 @@ namespace ForeverLand
         public string Apellido { get; set; }
         [Required, Column("nombre"), StringLength(45)]
         public string Nombre { get; set; }
-        [Column("email"), StringLength(45)]
+        [Required,Column("email"), StringLength(45)]
         public string email { get; set; }
         [ForeignKey("nroTajeta")]
         public Tarjeta Tarjeta { get; set; }
+        [Required,Column("Password"),StringLength(15)]
+        public string Contraseña { get; set; }
+
+        [NotMapped]
+        public string NombreCompleto => $"{Apellido}, {Nombre}";
 
         public Cliente()
         {

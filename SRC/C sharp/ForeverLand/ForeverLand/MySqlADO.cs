@@ -1,7 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace ForeverLand
@@ -37,6 +35,9 @@ namespace ForeverLand
             Jugadas.Add(jugada);
             SaveChanges();
         }
+
+        public Cliente clientePorMailPass(string mail, string passwordEncrip) => Clientes.FirstOrDefault(c => c.email == mail && c.Apellido == passwordEncrip);
+       
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
            
