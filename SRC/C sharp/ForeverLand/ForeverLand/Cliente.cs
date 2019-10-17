@@ -15,7 +15,7 @@ namespace ForeverLand
         public int DNI { get; set; }
         [Required, Column("apellido"), StringLength(45)]
         
-        public string Apelldio { get; set; }
+        public string Apellido { get; set; }
         [Required, Column("nombre"), StringLength(45)]
         public string Nombre { get; set; }
         [Column("email"), StringLength(45)]

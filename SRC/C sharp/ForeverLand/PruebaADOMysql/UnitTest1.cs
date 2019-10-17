@@ -14,7 +14,7 @@ namespace PruebaADOMysql
         {
 
             Ado = new MySqlADO();
-            Ado.Database.EnsureCreated();
+            Ado.Database.EnsureDeleted();
         }
 
         [TestMethod]
