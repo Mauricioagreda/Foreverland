@@ -15,7 +15,8 @@ namespace PruebaADOMysql
         public static void SetUpClase(TestContext context)
         {
 
-            Ado = new MySqlADO();
+            //Ado = new MySqlADO();
+            Ado = FactoryAdoMySQL.GetAdoDesdeJson("appsettings.json", "root");
             Ado.Database.EnsureDeleted();
         }
 

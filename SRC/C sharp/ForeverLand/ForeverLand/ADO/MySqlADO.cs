@@ -4,16 +4,18 @@ using System.Linq;
 
 namespace ForeverLand
 {
-    public class MySqlADO: DbContext
+    public class MySqlADO : DbContext
     {
-        public DbSet<Fichin>Fichines
-        {get; set; }
-        public DbSet<Cliente>Clientes
-        {get; set; }
-        public DbSet<Recarga>Recargas
-        {get; set; }
-        public DbSet<Jugada>Jugadas
-        {get; set; }
+        public DbSet<Fichin> Fichines
+        { get; set; }
+        public DbSet<Cliente> Clientes
+        { get; set; }
+        public DbSet<Recarga> Recargas
+        { get; set; }
+        public DbSet<Jugada> Jugadas
+        { get; set; }
+        public MySqlADO() :base() { }
+        internal MySqlADO(DbContextOptions dbo) : base(dbo) { }
 
         public void AltaFichin(Fichin fichin)
         {
@@ -37,12 +39,9 @@ namespace ForeverLand
         }
 
         public Cliente clientePorMailPass(string mail, string passwordEncrip) => Clientes.FirstOrDefault(c => c.email == mail && c.Apellido == passwordEncrip);
-       
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-           
-            optionsBuilder.UseMySQL("server=localhost;database=ForeverLand;user=root;password=root");
-        }
+
+        
 
     }
 }
+
