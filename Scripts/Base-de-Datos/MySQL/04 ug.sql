@@ -4,7 +4,7 @@ create user IF NOT exists 'Componente'@'10.120.0.%' identified by 'contraCompone
 
 create user IF NOT exists 'Cliente'@'%' identified by 'contraCliente';
 
-grant select,insert,update (precio) on Fichin to 'Administrador'@'%';
+grant select,insert,update(precio) on Fichin to 'Administrador'@'%';
 
 grant select,insert on Cliente to 'Administrador'@'%';
 
