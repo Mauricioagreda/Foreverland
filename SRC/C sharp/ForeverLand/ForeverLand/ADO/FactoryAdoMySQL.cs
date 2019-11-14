@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace ForeverLand
+namespace ForeverLand.ADO
 {
     public static class FactoryAdoMySQL
     {

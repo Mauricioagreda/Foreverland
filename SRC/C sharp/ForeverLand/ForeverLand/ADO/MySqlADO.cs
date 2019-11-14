@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ForeverLand
+namespace ForeverLand.ADO
 {
     public class MySqlADO : DbContext
     {
         public DbSet<Fichin> Fichines
+        { get; set; }
+        public DbSet<Tarjeta> Tarjetas
         { get; set; }
         public DbSet<Cliente> Clientes
         { get; set; }
@@ -14,6 +16,8 @@ namespace ForeverLand
         { get; set; }
         public DbSet<Jugada> Jugadas
         { get; set; }
+       
+       
         public MySqlADO() :base() { }
         internal MySqlADO(DbContextOptions dbo) : base(dbo) { }
 
@@ -38,10 +42,38 @@ namespace ForeverLand
             SaveChanges();
         }
 
+        public void AltaTarjeta(Tarjeta tarjeta)
+        {
+            Tarjetas.Add(tarjeta);
+            SaveChanges();
+        }
+
         public Cliente clientePorMailPass(string mail, string passwordEncrip) => Clientes.FirstOrDefault(c => c.email == mail && c.Apellido == passwordEncrip);
 
-        
+        public List<Tarjeta> obtenertarjetas()
+        {
+            return Tarjetas.ToList();
 
+        }
+
+        public List<Cliente> obtenerclientes()
+        {
+            return Clientes
+                    .Include(c => c.Tarjeta)
+                    .ToList();
+        }
+
+        public List<Fichin> obtenerFichines()
+        {
+            return Fichines.ToList();
+        }
+
+        public List<Recarga> historialDe(Tarjeta tarjeta)
+        {
+            return Recargas
+                    .Where(historial => historial.Tarjeta == tarjeta)
+                    .ToList();
+        }
     }
 }
 
