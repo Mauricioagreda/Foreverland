@@ -6,7 +6,7 @@ using ForeverLand;
 
 namespace ProgramaGerente.Menu
 {
-    class MenuListadoRecarga : MenuListador<Recarga>
+    public class MenuListadoRecarga : MenuListador<Recarga>
     {
         public Tarjeta Tarjeta { get; set; }
         public override void imprimirElemento(Recarga r) => Console.WriteLine($"{r.FechaHora.ToShortDateString()} - {r.Monto}");

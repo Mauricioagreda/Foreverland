@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ProgramaGerente.Menu
 {
-    class MenuListaFichin: MenuListador<Fichin>
+    public class MenuListaFichin: MenuListador<Fichin>
     {
 
         public override void imprimirElemento(Fichin f) => Console.WriteLine(f.ToString());

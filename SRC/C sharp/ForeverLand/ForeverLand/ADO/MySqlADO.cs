@@ -74,6 +74,13 @@ namespace ForeverLand.ADO
                     .Where(historial => historial.Tarjeta == tarjeta)
                     .ToList();
         }
+
+        public List<Jugada> historialDeF(Fichin fichin)
+        {
+            return Jugadas
+                    .Where(historial => historial.Fichin == fichin)
+                    .ToList();
+        }
     }
 }
 
