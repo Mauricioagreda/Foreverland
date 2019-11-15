@@ -37,6 +37,12 @@ namespace ForeverLand
 
         public bool montoSuficiente(float monto) => monto <= this.Precio;
 
+
+        public void cambiarPrecio(float precio)
+        {
+            Precio = precio;                   
+        }
+
         public override string ToString()
             => $"{Nombre} - Precio{Precio} - ";
     }

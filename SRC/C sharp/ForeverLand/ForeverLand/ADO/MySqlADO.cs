@@ -81,6 +81,18 @@ namespace ForeverLand.ADO
                     .Where(historial => historial.Fichin == fichin)
                     .ToList();
         }
+
+        public void actualizar(Fichin fichin)
+        {
+            this.Attach<Fichin>(fichin);
+            SaveChanges();
+        }
+
+        public void actualizar(Cliente cliente)
+        {
+            this.Attach<Cliente>(cliente);
+            SaveChanges();
+        }
     }
 }
 

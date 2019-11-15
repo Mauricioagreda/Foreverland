@@ -9,13 +9,15 @@ namespace Programagerente
         static void Main(string[] args)
         {
             var menuAltaFichin = new menuAltaFichin();
-            var menuListaFichin = new MenuListaFichin() { Nombre = "Lista Fichin" }; ;
+            var menuListaFichin = new MenuListaFichin() { Nombre = "Lista Fichin" };
+            var menuModificarFichin = new MenuModificarFichin() { Nombre = "Modificar Fichin" };
             var menuHistorialJugada = new MenuHistorialJugada() { Nombre = "Historial Jugada" }; 
             var menuAltaTarjeta = new menuAltaTarjeta();
             var menuListaTarjeta = new MenuListaTarjeta() { Nombre = "Lista Tarjeta" };
             var menuHistorialRecarga = new MenuMostrarHistorialTarjeta() { Nombre = "Historial Recargas" };
             var menuAltaCliente = new menuAltaCliente(menuListaTarjeta);
-            var menuListaCliente = new MenuListaCliente() { Nombre = "Lista Cliente" }; ;
+            var menuListaCliente = new MenuListaCliente() { Nombre = "Lista Cliente" }; 
+            
            
  
 
@@ -25,6 +27,7 @@ namespace Programagerente
             menuFichin.agregarMenu(menuAltaFichin);
             menuFichin.agregarMenu(menuListaFichin);
             menuFichin.agregarMenu(menuHistorialJugada);
+            menuFichin.agregarMenu(menuModificarFichin);
 
             //MenuFichin
             var menuTarjeta = new MenuCompuesto() { Nombre = "Tarjeta" };
