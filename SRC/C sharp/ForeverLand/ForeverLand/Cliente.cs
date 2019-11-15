@@ -52,5 +52,8 @@ namespace ForeverLand
             Tarjeta.AgregarRecarga(recarga, monto);
           
         }
+
+        public override string ToString()
+            => $"{Nombre} - Numero de Tarjeta{Tarjeta.nroTarjeta}";
     }
 }

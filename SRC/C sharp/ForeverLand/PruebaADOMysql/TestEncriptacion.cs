@@ -1,9 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ForeverLand;
 using NETCore.Encrypt;
-
-
-
+using ForeverLand.ADO;
 
 namespace PruebaADOMysql
 {
@@ -33,7 +31,7 @@ namespace PruebaADOMysql
                 Nombre = " asdasdasd",
                 Apellido = "sdfsdfsdf",
                 email =mail ,
-                Contraseña = passEncriptada
+              
 
             };
             Ado.AltaCliente(cliente);

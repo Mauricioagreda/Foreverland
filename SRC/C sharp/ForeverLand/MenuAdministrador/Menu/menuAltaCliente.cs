@@ -1,5 +1,6 @@
 ﻿using MenuesConsola;
 using ForeverLand;
+using System;
 
 namespace ProgramaGerente.Menu
 {
@@ -19,7 +20,7 @@ namespace ProgramaGerente.Menu
             var nombre = prompt("Ingrese nombre del Cliente");
             var apellido = prompt("Ingrese apellido del Cliente");
             var mail = prompt("Ingrese mail del Cliente");
-            var tarjeta = MenuListaTarjeta.seleccionarElemento();
+            var tarjeta = MenuListaTarjetas.seleccionarElemento();
 
         
 
