@@ -21,6 +21,8 @@ namespace ForeverLand.ADO
         public MySqlADO() :base() { }
         internal MySqlADO(DbContextOptions dbo) : base(dbo) { }
 
+        public Cliente usuarioPorDNI(int dni)
+            => Clientes.FirstOrDefault(c => c.DNI == dni);
         public void AltaFichin(Fichin fichin)
         {
             Fichines.Add(fichin);
@@ -93,6 +95,8 @@ namespace ForeverLand.ADO
             this.Attach<Cliente>(cliente);
             SaveChanges();
         }
+
+        
     }
 }
 

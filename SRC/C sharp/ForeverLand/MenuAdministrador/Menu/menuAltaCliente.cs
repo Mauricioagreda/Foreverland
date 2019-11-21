@@ -36,11 +36,11 @@ namespace ProgramaGerente.Menu
             try
             {
                 GerenteADO.ADO.AltaCliente(cliente);
-                Console.WriteLine("fichin dado de alta con exito");
+                Console.WriteLine("Cliente dado de alta con exito");
             }
             catch (Exception e)
             {
-                Console.WriteLine($"No se pudo dar de alta el Fichin: {e.Message}");
+                Console.WriteLine($"No se pudo dar de alta el Cliente: {e.Message}");
             }
             Console.ReadKey();
 

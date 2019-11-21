@@ -42,14 +42,20 @@ namespace ForeverLand
             {
                 Jugada jugada = new Jugada(this, fichin);
                 fichin.AgregarJugada(jugada);
+                Tarjeta.Saldo -= fichin.Precio;
+                Console.WriteLine("Saldo disponible" + Tarjeta.Saldo);
             }
-                
+
+           else
+                Console.WriteLine("Saldo insuficiente" + Tarjeta.Saldo);
+
         }
 
         public void Recargar(float monto)
         {
             Recarga recarga = new Recarga(this, monto);
             Tarjeta.AgregarRecarga(recarga, monto);
+            Console.WriteLine("Carga realizada con esito");
           
         }
 

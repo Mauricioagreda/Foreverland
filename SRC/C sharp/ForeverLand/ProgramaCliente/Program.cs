@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgramaCliente.Menu;
+using System;
 
 namespace ProgramaCliente
 {
@@ -6,7 +7,7 @@ namespace ProgramaCliente
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var menuInicio = new MenuIngresarTarjeta();
         }
     }
 }

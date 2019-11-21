@@ -40,7 +40,7 @@ namespace ProgramaGerente.Menu
                 try
                 {
                     GerenteADO.ADO.actualizar(Fichin);
-                    Console.WriteLine("Producto actualizado con exito");
+                    Console.WriteLine("Fichin actualizado con exito");
                 }
                 catch (Exception e)
                 {

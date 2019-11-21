@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaADOMysql", "PruebaADO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramaGerente", "MenuAdministrador\ProgramaGerente.csproj", "{B9605FEC-488E-406E-BB76-38032AB0BE81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramaCliente", "ProgramaCliente\ProgramaCliente.csproj", "{9E65AFC3-A4F2-4058-966D-108FBDB9C3E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramaCliente", "ProgramaCliente\ProgramaCliente.csproj", "{9E65AFC3-A4F2-4058-966D-108FBDB9C3E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
