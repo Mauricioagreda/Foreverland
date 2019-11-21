@@ -16,7 +16,9 @@ grant update(saldo) on Tarjeta to 'Componente'@'10.120.0.%';
 
 # Cliente
 grant select on Cliente to 'Cliente'@'%';
-grant select on Tarjeta to 'Cliente'@'%';
-grant select on Jugada to 'Cliente'@'%';
+grant select, update(saldo) on Tarjeta to 'Cliente'@'%';
+grant select,insert on recarga to 'Cliente'@'%';
+grant select on Fichin  to 'Cliente'@'%';
+grant select,insert on Jugada to 'Cliente'@'%';
 
 
