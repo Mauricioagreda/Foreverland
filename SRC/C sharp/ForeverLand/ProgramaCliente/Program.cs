@@ -1,4 +1,5 @@
-﻿using ProgramaCliente.Menu;
+﻿using MenuesConsola;
+using ProgramaCliente.Menu;
 using System;
 
 namespace ProgramaCliente
@@ -8,6 +9,8 @@ namespace ProgramaCliente
         static void Main(string[] args)
         {
             var menuInicio = new MenuIngresarTarjeta();
+            menuInicio.mostrar();
         }
     }
 }
+

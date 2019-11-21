@@ -21,16 +21,17 @@ namespace ProgramaGerente.Menu
             var apellido = prompt("Ingrese apellido del Cliente");
             var mail = prompt("Ingrese mail del Cliente");
             var tarjeta = MenuListaTarjetas.seleccionarElemento();
+            var dni = prompt("Ingrese DNI");
+            
 
-        
 
             cliente = new Cliente()
             {
                 Nombre = nombre,
                 Apellido = apellido,
                 email = mail,
-                Tarjeta = tarjeta
-                
+                Tarjeta = tarjeta,
+                DNI = int.Parse(dni)
             };
 
             try

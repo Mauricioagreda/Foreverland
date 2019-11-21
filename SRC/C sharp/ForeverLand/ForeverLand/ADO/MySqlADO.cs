@@ -22,7 +22,12 @@ namespace ForeverLand.ADO
         internal MySqlADO(DbContextOptions dbo) : base(dbo) { }
 
         public Cliente usuarioPorDNI(int dni)
-            => Clientes.FirstOrDefault(c => c.DNI == dni);
+            => Clientes.
+                Where(c => c.DNI == dni).
+                Include(c => c.Tarjeta).
+                ThenInclude(t => t.Recargas).
+                ToList().
+                FirstOrDefault();
         public void AltaFichin(Fichin fichin)
         {
             Fichines.Add(fichin);

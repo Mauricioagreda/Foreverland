@@ -22,6 +22,7 @@ namespace ProgramaCliente.Menu
                 Console.WriteLine("El DNI es incorrecto");
             else
             {
+
                 var menuJugar = new MenuJugar() {Nombre = "Jugar" };
                 menuJugar.Cliente = Cliente;
                 var menuRecargar = new MenuRecargar() { Nombre = "Recargar" };
@@ -29,6 +30,7 @@ namespace ProgramaCliente.Menu
                 var MenuCliente = new MenuCompuesto() { Nombre = "Menu de opciones" };
                 MenuCliente.agregarMenu(menuJugar);
                 MenuCliente.agregarMenu(menuRecargar);
+                MenuCliente.mostrar();
             }
         }
     }
