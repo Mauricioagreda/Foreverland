@@ -28,6 +28,32 @@ namespace ForeverLand.ADO
                 ThenInclude(t => t.Recargas).
                 ToList().
                 FirstOrDefault();
+
+        public Cliente clientePorMailPass(string mail, string passwordEncrip) => Clientes.FirstOrDefault(c => c.email == mail && c.Apellido == passwordEncrip);
+
+        public List<Tarjeta> obtenertarjetas() => Tarjetas.ToList();
+
+        public List<Cliente> obtenerclientes() => Clientes
+                    .Include(c => c.Tarjeta)
+                    .ToList();
+
+        public List<Fichin> obtenerFichines() => Fichines
+            .Include(f => f.Jugadas)
+            .ToList();
+            
+           
+
+        public List<Recarga> historialDe(Tarjeta tarjeta) => Recargas
+                    .Where(historial => historial.Tarjeta == tarjeta)
+                    .ToList();
+
+        public List<Jugada> historialDeF(Fichin fichin) => Jugadas
+                    .Where(historial => historial.Fichin == fichin)
+                    .ToList();
+
+
+
+
         public void AltaFichin(Fichin fichin)
         {
             Fichines.Add(fichin);
@@ -55,39 +81,7 @@ namespace ForeverLand.ADO
             SaveChanges();
         }
 
-        public Cliente clientePorMailPass(string mail, string passwordEncrip) => Clientes.FirstOrDefault(c => c.email == mail && c.Apellido == passwordEncrip);
-
-        public List<Tarjeta> obtenertarjetas()
-        {
-            return Tarjetas.ToList();
-
-        }
-
-        public List<Cliente> obtenerclientes()
-        {
-            return Clientes
-                    .Include(c => c.Tarjeta)
-                    .ToList();
-        }
-
-        public List<Fichin> obtenerFichines()
-        {
-            return Fichines.ToList();
-        }
-
-        public List<Recarga> historialDe(Tarjeta tarjeta)
-        {
-            return Recargas
-                    .Where(historial => historial.Tarjeta == tarjeta)
-                    .ToList();
-        }
-
-        public List<Jugada> historialDeF(Fichin fichin)
-        {
-            return Jugadas
-                    .Where(historial => historial.Fichin == fichin)
-                    .ToList();
-        }
+        
 
         public void actualizar(Fichin fichin)
         {
