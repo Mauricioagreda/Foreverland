@@ -35,7 +35,7 @@ namespace ForeverLand
             Jugadas.Add(jugada);
         }
 
-        public bool montoSuficiente(float monto) => monto <= this.Precio;
+        public bool montoSuficiente(float monto) => monto >= this.Precio;
 
 
         public void cambiarPrecio(float precio)

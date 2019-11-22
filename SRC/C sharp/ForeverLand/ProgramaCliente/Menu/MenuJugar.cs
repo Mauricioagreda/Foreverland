@@ -10,7 +10,7 @@ namespace ProgramaCliente.Menu
     {
        public Cliente Cliente { get; set; }
        private Fichin fichin { get; set; }
-       private MenuListaFichin ListaFichin { get; set; }
+      
 
        
 
@@ -30,6 +30,9 @@ namespace ProgramaCliente.Menu
         public void JugarFichin(Fichin fichin)
         {
             Cliente.Jugar(fichin);
+
+            ClienteADO.ADO.actualizar(Cliente);
+            
         }
 
     }

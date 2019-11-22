@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using ForeverLand.ADO;
 
 namespace ForeverLand
 {
@@ -40,14 +40,18 @@ namespace ForeverLand
         {
             if (fichin.montoSuficiente(Tarjeta.Saldo))
             {
+
                 Jugada jugada = new Jugada(this, fichin);
                 fichin.AgregarJugada(jugada);
                 Tarjeta.Saldo -= fichin.Precio;
-                Console.WriteLine("Saldo disponible" + Tarjeta.Saldo);
+                Console.WriteLine("Saldo disponible" + " " +Tarjeta.Saldo);
+                Console.ReadKey();
+
             }
 
            else
-                Console.WriteLine("Saldo insuficiente" + Tarjeta.Saldo);
+                Console.WriteLine("Saldo insuficiente" + " " +Tarjeta.Saldo);
+            Console.ReadKey();
 
         }
 
