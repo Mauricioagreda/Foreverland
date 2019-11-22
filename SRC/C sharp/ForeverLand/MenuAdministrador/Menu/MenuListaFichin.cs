@@ -8,8 +8,7 @@ namespace ProgramaGerente.Menu
 {
     public class MenuListaFichin: MenuListador<Fichin>
     {
-
-        public override void imprimirElemento(Fichin f) => Console.WriteLine(f.Nombre);
+        public override void imprimirElemento(Fichin f) => Console.WriteLine(f.Nombre + f.Precio);
 
         public override List<Fichin> obtenerLista() => GerenteADO.ADO.obtenerFichines();
     }

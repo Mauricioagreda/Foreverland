@@ -9,7 +9,7 @@ namespace ProgramaGerente.Menu
    public class MenuListadoJugada : MenuListador<Jugada>
    {
         public Fichin Fichin { get; set; }
-        public override void imprimirElemento(Jugada j) => Console.WriteLine($"{j.FechaHora.ToShortDateString()} - {j.Monto}");
+        public override void imprimirElemento(Jugada j) => Console.WriteLine($"{j.FechaHora.ToShortDateString()} - {j.FechaHora.ToShortTimeString()} - {j.Monto}");
 
         
         public override List<Jugada> obtenerLista()
