@@ -95,7 +95,10 @@ namespace ForeverLand.ADO
             SaveChanges();
         }
 
-        
+        public Cliente clientePorDniPass(int dni, string passEncriptada)
+            => Clientes.FirstOrDefault(c => c.DNI == dni && c.Password == passEncriptada);
+
+
     }
 }
 

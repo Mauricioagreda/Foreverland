@@ -1,6 +1,7 @@
 ﻿using MenuesConsola;
 using ForeverLand;
 using System;
+using static System.ReadLine;
 
 namespace ProgramaGerente.Menu
 {
@@ -22,7 +23,8 @@ namespace ProgramaGerente.Menu
             var mail = prompt("Ingrese mail del Cliente");
             var tarjeta = MenuListaTarjetas.seleccionarElemento();
             var dni = prompt("Ingrese DNI");
-            
+            var pass = ReadPassword("Ingrese contraseña: ");
+
 
 
             cliente = new Cliente()
@@ -32,6 +34,7 @@ namespace ProgramaGerente.Menu
                 email = mail,
                 Tarjeta = tarjeta,
                 DNI = int.Parse(dni)
+                
             };
 
             try

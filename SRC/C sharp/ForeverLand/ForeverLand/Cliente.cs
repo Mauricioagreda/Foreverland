@@ -22,7 +22,9 @@ namespace ForeverLand
         public string email { get; set; }
         [ForeignKey("nroTajeta")]
         public Tarjeta Tarjeta { get; set; }
-       
+        [Column("password"), StringLength(65), Required]
+        public string Password { get; set; }
+
 
         [NotMapped]
         public string NombreCompleto => $"{Apellido}, {Nombre}";
