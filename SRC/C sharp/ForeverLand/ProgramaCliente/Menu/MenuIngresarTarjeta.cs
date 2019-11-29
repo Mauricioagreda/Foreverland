@@ -10,19 +10,24 @@ namespace ProgramaCliente.Menu
     {
         private Cliente Cliente { get; set; }
 
-        public MenuIngresarTarjeta() => Nombre = "Logear";
+        public MenuIngresarTarjeta() => Nombre = "Loguear";
+
+        public MenuIngresarTarjeta(Cliente cliente)
+        {
+            Cliente = cliente;
+        }
 
         public override void mostrar()
         {
             base.mostrar();
             var DNI = prompt("Ingrese numero de DNI");
+            var Contraseña = prompt("Ingrese su contraseña");
             var Cliente = ClienteADO.ADO.usuarioPorDNI(int.Parse(DNI));
 
             if (Cliente is null)
-                Console.WriteLine("El DNI es incorrecto");
+                Console.WriteLine("El DNI es incorrecto o la contraseña son incorrectos");
             else
             {
-
                 var menuJugar = new MenuJugar() {Nombre = "Jugar" };
                 menuJugar.Cliente = Cliente;
                 var menuRecargar = new MenuRecargar() { Nombre = "Recargar" };

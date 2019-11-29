@@ -1,4 +1,5 @@
 ﻿using MenuesConsola;
+using ProgramaCajero.Menu;
 using ProgramaCliente.Menu;
 using System;
 
@@ -8,7 +9,7 @@ namespace ProgramaCliente
     {
         static void Main(string[] args)
         {
-            var menuInicio = new MenuIngresarTarjeta();
+            var menuInicio = new MenuLogin();
             menuInicio.mostrar();
         }
     }

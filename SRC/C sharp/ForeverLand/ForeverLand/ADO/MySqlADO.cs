@@ -29,7 +29,7 @@ namespace ForeverLand.ADO
                 ToList().
                 FirstOrDefault();
 
-        public Cliente clientePorMailPass(string mail, string passwordEncrip) => Clientes.FirstOrDefault(c => c.email == mail && c.Apellido == passwordEncrip);
+        public Cliente clientePorDNIPass(string dni, string passwordEncrip) => Clientes.FirstOrDefault(c => c.DNI == dni && c.Password == passwordEncrip);
 
         public List<Tarjeta> obtenertarjetas() => Tarjetas.ToList();
 

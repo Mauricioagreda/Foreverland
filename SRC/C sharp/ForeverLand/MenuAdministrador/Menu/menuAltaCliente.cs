@@ -33,10 +33,13 @@ namespace ProgramaGerente.Menu
                 Apellido = apellido,
                 email = mail,
                 Tarjeta = tarjeta,
+                Password = pass,
+
+
                 DNI = int.Parse(dni)
                 
             };
-
+        
             try
             {
                 GerenteADO.ADO.AltaCliente(cliente);
@@ -44,7 +47,7 @@ namespace ProgramaGerente.Menu
             }
             catch (Exception e)
             {
-                Console.WriteLine($"No se pudo dar de alta el Cliente: {e.Message}");
+                Console.WriteLine($"No se pudo dar de alta el Cliente: {e.Message} - {e.InnerException.Message}");
             }
             Console.ReadKey();
 

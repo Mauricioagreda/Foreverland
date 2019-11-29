@@ -3,7 +3,6 @@ using MenuesConsola;
 using System;
 using static System.ReadLine; 
 using NETCore.Encrypt;
-using ForeverLand.ADO;
 using ProgramaCliente.Menu;
 using ProgramaCliente;
 
@@ -19,16 +18,16 @@ namespace ProgramaCajero.Menu
         {
             base.mostrar();
 
-            var mail = prompt("Ingrese mail"));
+            var dni = prompt("Ingrese DNI");
             var pass = ReadPassword("Ingrese contraseña: ");
             pass = EncryptProvider.Sha256(pass);
 
             try
             {
-                Cliente  = ClienteADO.ADO.clientePorMailPass(mail, pass);
+                Cliente  = ClienteADO.ADO.clientePorDNIPass(dni, pass);
                 if (Cliente is null)
                 {
-                    Console.WriteLine("DNI o contraseña incorrecta");
+                    Console.WriteLine("DNI o contraseña correcta");
                     Console.ReadKey();
                 }
                 else
@@ -43,14 +42,22 @@ namespace ProgramaCajero.Menu
                 Console.ReadKey();
             }
 
-            private void instanciarMenuesPara(Cliente cliente)
-            {
-                var menuIngresarTarjeta = new MenuIngresarTarjeta(cliente);
+        }
+        private void instanciarMenuesPara(Cliente cliente)
+        {
+            var menuIngresarTarjeta = new MenuIngresarTarjeta(cliente);
 
-                PrincipalUsuario = new MenuCompuesto(menuIngresarTarjeta) { Nombre = "Menu Tarjeta" };
-            }
+            PrincipalUsuario = new MenuCompuesto(menuIngresarTarjeta) { Nombre = "Menu Tarjeta" };
+
+            /*var menuJugar = new MenuIngresarTarjeta(Cliente cliente);
+
+            PrincipalUsuario = new MenuCompuesto(menuIngresarTarjeta) { Nombre = "Menu Tarjeta" };
+
+            var menuIngresarTarjeta = new MenuIngresarTarjeta(cliente);
+
+            PrincipalUsuario = new MenuCompuesto(menuIngresarTarjeta) { Nombre = "Menu Tarjeta" };*/
         }
 
-        
+
     }
 }
