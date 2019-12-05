@@ -18,16 +18,16 @@ namespace ProgramaCajero.Menu
         {
             base.mostrar();
 
-            var dni = prompt("Ingrese DNI");
+            var dni = Convert.ToInt32(prompt("Ingrese DNI"));
             var pass = ReadPassword("Ingrese contraseña: ");
             pass = EncryptProvider.Sha256(pass);
 
             try
             {
-                Cliente  = ClienteADO.ADO.clientePorDNIPass(dni, pass);
+                Cliente  = ClienteADO.ADO.clientePorDniPass(dni, pass);
                 if (Cliente is null)
                 {
-                    Console.WriteLine("DNI o contraseña correcta");
+                    Console.WriteLine("DNI o contraseña incorrecta");
                     Console.ReadKey();
                 }
                 else

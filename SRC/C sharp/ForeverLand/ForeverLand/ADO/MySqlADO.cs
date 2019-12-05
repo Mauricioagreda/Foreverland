@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,8 +29,6 @@ namespace ForeverLand.ADO
                 ThenInclude(t => t.Recargas).
                 ToList().
                 FirstOrDefault();
-
-        public Cliente clientePorDNIPass(string dni, string passwordEncrip) => Clientes.FirstOrDefault(c => c.DNI == dni && c.Password == passwordEncrip);
 
         public List<Tarjeta> obtenertarjetas() => Tarjetas.ToList();
 

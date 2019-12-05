@@ -1,15 +1,15 @@
-create user IF NOT exists'Gerente'@'%' identified by 'contraGerente';
+create user IF NOT exists'Gerente'@'localhost' identified by 'contraGerente';
 create user IF NOT exists 'Componente'@'10.120.0.%' identified by 'contraComponente';
 create user IF NOT exists 'Cliente'@'%' identified by 'contraCliente';
 
 # Gerente
 
-grant select,insert,update(precio) on Fichin to 'Gerente'@'%';
-grant select,insert on Tarjeta to 'Gerente'@'%';
-grant select,insert on Cliente to 'Gerente'@'%';
-grant select on Jugada to 'Gerente'@'%';
+grant select,insert,update(precio) on Fichin to 'Gerente'@'localhost';
+grant select,insert on Tarjeta to 'Gerente'@'localhost';
+grant select,insert on Cliente to 'Gerente'@'localhost';
+grant select on Jugada to 'Gerente'@'localhost';
 
-#Componente
+#Componentetarjeta
 
 grant insert on Jugada to 'Componente'@'10.120.0.%';
 grant update(saldo) on Tarjeta to 'Componente'@'10.120.0.%';

@@ -23,25 +23,27 @@ namespace PruebaADOMysql
             Ado = new MySqlADO();
             string passEncriptada = EncryptProvider.Sha256("asdasdasd");
             string otraPass = EncryptProvider.Sha256("asdasd");
-            string mail = "asdasdasd@gmail.com";
-            string otroMail = "asd@gmail.com";
+            int dni = 1000000;
+            int otroDni = 999;
+
             Cliente cliente = new Cliente()
             {
-               
+                DNI = dni,
                 Nombre = " asdasdasd",
                 Apellido = "sdfsdfsdf",
-                email =mail ,
+                Password = passEncriptada 
               
 
             };
             Ado.AltaCliente(cliente);
-            Cliente cliente1 = Ado.clientePorMailPass(mail, otraPass);
+
+            Cliente cliente1 = Ado.clientePorDniPass(dni, otraPass);
             Assert.IsNull(cliente1);
-            Cliente cliente2 = Ado.clientePorMailPass(otroMail, passEncriptada);
+            Cliente cliente2 = Ado.clientePorDniPass(otroDni, passEncriptada);
             Assert.IsNull(cliente2);
-            Cliente cliente3 = Ado.clientePorMailPass(otroMail, otraPass);
+            Cliente cliente3 = Ado.clientePorDniPass(otroDni, otraPass);
             Assert.IsNull(cliente3);
-            Cliente cliente4 = Ado.clientePorMailPass(mail, passEncriptada);
+            Cliente cliente4 = Ado.clientePorDniPass(dni, passEncriptada);
             Assert.IsNotNull(cliente4);
             Assert.AreEqual("asdasdasd, sdfsdfsdf", cliente4.NombreCompleto);
         }
