@@ -9,7 +9,7 @@ namespace ProgramaCliente
     {
         static void Main(string[] args)
         {
-            var menuInicio = new MenuLogin();
+            var menuInicio = new MenuIngresarTarjeta();
             menuInicio.mostrar();
         }
     }

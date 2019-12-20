@@ -22,9 +22,9 @@ namespace ForeverLand.ADO
         public MySqlADO() :base() { }
         internal MySqlADO(DbContextOptions dbo) : base(dbo) { }
 
-        public Cliente usuarioPorDNI(int dni)
+        public Cliente usuarioPorDNI(int dni, string pass)
             => Clientes.
-                Where(c => c.DNI == dni).
+                Where(c => c.DNI == dni && c.Password == pass).
                 Include(c => c.Tarjeta).
                 ThenInclude(t => t.Recargas).
                 ToList().
@@ -49,9 +49,6 @@ namespace ForeverLand.ADO
         public List<Jugada> historialDeF(Fichin fichin) => Jugadas
                     .Where(historial => historial.Fichin == fichin)
                     .ToList();
-
-
-
 
         public void AltaFichin(Fichin fichin)
         {

@@ -8,7 +8,7 @@ using ProgramaCliente;
 
 namespace ProgramaCajero.Menu
 {
-    public class MenuLogin : MenuComponente
+    /*public class MenuLogin : MenuComponente
     {
         private Cliente Cliente { get; set; }
         private MenuCompuesto PrincipalUsuario { get; set; }
@@ -55,9 +55,9 @@ namespace ProgramaCajero.Menu
 
             var menuIngresarTarjeta = new MenuIngresarTarjeta(cliente);
 
-            PrincipalUsuario = new MenuCompuesto(menuIngresarTarjeta) { Nombre = "Menu Tarjeta" };*/
+            PrincipalUsuario = new MenuCompuesto(menuIngresarTarjeta) { Nombre = "Menu Tarjeta" };
         }
 
 
-    }
+    }*/
 }

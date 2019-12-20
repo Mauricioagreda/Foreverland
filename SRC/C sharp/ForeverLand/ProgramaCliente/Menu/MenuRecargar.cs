@@ -8,7 +8,7 @@ namespace ProgramaCliente.Menu
         public Cliente Cliente { get; set; }
         public MenuRecargar()
         {
-            
+        
         
         }
         public override void mostrar()

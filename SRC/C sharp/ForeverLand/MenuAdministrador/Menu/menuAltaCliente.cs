@@ -1,5 +1,6 @@
 ﻿using MenuesConsola;
 using ForeverLand;
+using NETCore.Encrypt;
 using System;
 using static System.ReadLine;
 
@@ -22,8 +23,10 @@ namespace ProgramaGerente.Menu
             var apellido = prompt("Ingrese apellido del Cliente");
             var mail = prompt("Ingrese mail del Cliente");
             var tarjeta = MenuListaTarjetas.seleccionarElemento();
-            var dni = prompt("Ingrese DNI");
+            var dni = Convert.ToInt32(prompt("Ingrese DNI"));
             var pass = ReadPassword("Ingrese contraseña: ");
+            pass = EncryptProvider.Sha256(pass);
+
 
 
 
@@ -34,9 +37,10 @@ namespace ProgramaGerente.Menu
                 email = mail,
                 Tarjeta = tarjeta,
                 Password = pass,
+                DNI = dni
 
 
-                DNI = int.Parse(dni)
+                //DNI = int.Parse(dni)
                 
             };
         
