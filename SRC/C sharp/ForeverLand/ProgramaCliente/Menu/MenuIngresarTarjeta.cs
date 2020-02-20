@@ -32,14 +32,11 @@ namespace ProgramaCliente.Menu
                 Console.WriteLine("El DNI es incorrecto o la contraseña son incorrectos");
             else
             {
-                var menuSaldo = new MenuSaldo() { Nombre = "Saldo" };
-                menuSaldo.Cliente = Cliente;
                 var menuJugar = new MenuJugar() {Nombre = "Jugar" };
                 menuJugar.Cliente = Cliente;
                 var menuRecargar = new MenuRecargar() { Nombre = "Recargar" };
                 menuRecargar.Cliente = Cliente;
                 var MenuCliente = new MenuCompuesto() { Nombre = "Menu de opciones" };
-                MenuCliente.agregarMenu(menuSaldo);
                 MenuCliente.agregarMenu(menuJugar);
                 MenuCliente.agregarMenu(menuRecargar);
                 MenuCliente.mostrar();

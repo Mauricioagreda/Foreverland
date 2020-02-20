@@ -30,6 +30,11 @@ namespace ForeverLand.ADO
                 ToList().
                 FirstOrDefault();
 
+        public object usuarioPorDNI(string dNI, string contraseña)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Tarjeta> obtenertarjetas() => Tarjetas.ToList();
 
         public List<Cliente> obtenerclientes() => Clientes
@@ -42,7 +47,7 @@ namespace ForeverLand.ADO
             
            
 
-        public List<Recarga> historialDe(Tarjeta tarjeta) => Recargas
+        public List<Recarga> historialDe(Tarjeta tarjeta) => Recargas 
                     .Where(historial => historial.Tarjeta == tarjeta)
                     .ToList();
 

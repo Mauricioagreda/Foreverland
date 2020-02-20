@@ -1,16 +1,17 @@
-﻿using MenuesConsola;
-using System;
-using ForeverLand;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using ForeverLand;
+using System.Linq;
+using MenuesConsola;
 
 namespace ProgramaCliente.Menu
 {
-    public class MenuSaldo : MenuListador<Tarjeta>
+    class MenuSaldo
     {
-        public Cliente Cliente { get; set; }
-        public Tarjeta Tarjeta { get; set; }
-
+        public void MostrarSaldo()
+        {
+            Console.WriteLine("El saldo es: ");
+        } 
     }
 }
