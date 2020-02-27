@@ -99,7 +99,10 @@ namespace ForeverLand.ADO
         public Cliente clientePorDniPass(int dni, string passEncriptada)
             => Clientes.FirstOrDefault(c => c.DNI == dni && c.Password == passEncriptada);
 
-
+        public float sdfsdafdsa(Cliente cliente)
+        {
+            
+        }
     }
 }
 
